@@ -11,16 +11,7 @@ var usedGuess = [];
 var numGuessLeft = 9;
 var isFinished = false;
 
-var numWins = document.getElementById('numWins');
-var numLoses = document.getElementById('numLoses');
-var guessLeft = document.getElementById('numGuessLeft');
 
-
-
-
-numWins.textContent = 'Wins: ' + wins;
-numLoses.textContent = 'Loses: ' + losses;
-guessLeft.textContent = 'Guesses Remaining: ' + numGuessLeft
 
 
 
@@ -29,20 +20,26 @@ document.onkeyup = function (event) {
     console.log(userGuess)
     
     
-    var ans = alphabet[Math.floor(Math.random() * alphabet.length)];
-    console.log(ans)
+    var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    console.log(computerGuess)
 
-    if (userGuess === ans) {
-        alert('you win!')
+    usedGuess.push(userGuess); //pushing user guess to guesses so far
+
+    if (userGuess === computerGuess) {
+        wins++;
+        alert('you win!');
+        numGuessLeft = 9;
+        usedGuess.length = 0;
+
     } 
     else if (numGuessLeft == 0){
         losses++;
         numGuessLeft = 9;
         usedGuess.length = 0;
         console.log(losses);
-
+        alert('no more guesses for you!')
     }
-    else if(userGuess !== ans){
+    else if(userGuess !== computerGuess){
         numGuessLeft--;
         alert('you lose')
     }
@@ -50,3 +47,12 @@ document.onkeyup = function (event) {
 
 
 }
+
+var html = "<p>Guess what letter I'm thinking of!</p>" +
+        "<p>Total Wins: " + wins + "</p>" +
+        "<p>Total Losses: " + losses + "</p>" +
+        "<p>Guesses Left: " + numGuessLeft + "</p>" +
+        "<p>Your Guesses so far: " + usedGuess + "</p>"
+        ;
+        // Placing the html into the game ID
+        document.querySelector('#game').innerHTML = html;

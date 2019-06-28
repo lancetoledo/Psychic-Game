@@ -1,0 +1,33 @@
+body{
+    background: url("../images/background-blue.jpg")
+}
+
+header{
+    background:  #CEFDFE;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: 10px solid #000000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.imageContainer{
+
+}
+
+img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+
+}
+
+#game{
+    background:  #CEFDFE;
+    border: 10px solid #000000;
+    text-align: center;
+    margin-top:10px
+}
