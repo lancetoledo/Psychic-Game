@@ -23,7 +23,7 @@ document.onkeyup = function (event) {
     var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log(computerGuess)
 
-    usedGuess.push(userGuess); //pushing user guess to guesses so far
+    usedGuess.push(userGuess);
 
     if (userGuess === computerGuess) {
         wins++;
@@ -54,5 +54,5 @@ var html = "<p>Guess what letter I'm thinking of!</p>" +
         "<p>Guesses Left: " + numGuessLeft + "</p>" +
         "<p>Your Guesses so far: " + usedGuess + "</p>"
         ;
-        // Placing the html into the game ID
+      
         document.querySelector('#game').innerHTML = html;

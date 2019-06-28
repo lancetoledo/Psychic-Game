@@ -3,6 +3,7 @@ body{
 }
 
 header{
+    font-family: 'Faster One', cursive;
     background:  #CEFDFE;
     padding-top: 10px;
     padding-right: 10px;
@@ -26,8 +27,13 @@ img{
 }
 
 #game{
+    font-family: 'DM Serif Display', serif;
     background:  #CEFDFE;
     border: 10px solid #000000;
     text-align: center;
     margin-top:10px
+}
+
+html{
+    font-family: 'DM Serif Display', serif;
 }
