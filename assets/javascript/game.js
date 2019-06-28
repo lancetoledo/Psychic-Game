@@ -10,7 +10,7 @@ var maxNumGuess = 9;
 var usedGuess = [];
 var numGuessLeft = 9;
 var isFinished = false;
-
+var x = document.getElementById("myAudio"); 
 
 
 
@@ -27,7 +27,8 @@ document.onkeyup = function (event) {
 
     if (userGuess === computerGuess) {
         wins++;
-        alert('you win!');
+        x.play(); 
+        alert('You got it right! You are a Psychic!')
         numGuessLeft = 9;
         usedGuess.length = 0;
 
@@ -37,22 +38,22 @@ document.onkeyup = function (event) {
         numGuessLeft = 9;
         usedGuess.length = 0;
         console.log(losses);
-        alert('no more guesses for you!')
+        alert('No more guesses for you! Try Again!')
     }
     else if(userGuess !== computerGuess){
         numGuessLeft--;
-        alert('you lose')
+        
     }
 
+    var html = "<p>Guess what letter I'm thinking of!</p>" + "<br>" +
+        "<p>Total Wins: " + wins + "</p>" + "<br>" +
+        "<p>Total Losses: " + losses + "</p>" + "<br>" +
+        "<p>Guesses Left: " + numGuessLeft + "</p>" + "<br>" +
+        "<p>Your Guesses so far: " + usedGuess + "</p>" + "<br>" 
+        ;
+      
+        document.querySelector('#game').innerHTML = html;
 
 
 }
 
-var html = "<p>Guess what letter I'm thinking of!</p>" +
-        "<p>Total Wins: " + wins + "</p>" +
-        "<p>Total Losses: " + losses + "</p>" +
-        "<p>Guesses Left: " + numGuessLeft + "</p>" +
-        "<p>Your Guesses so far: " + usedGuess + "</p>"
-        ;
-      
-        document.querySelector('#game').innerHTML = html;
